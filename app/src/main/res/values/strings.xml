@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">StazGrady_COMP304Sec002_Lab4_Group7</string>
+    <string name="studentLogin">Student Login</string>
+    <string name="librarianLogin">Librarian Login</string>
+    <string name="signUp">Student Sign-Up</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="fName">First Name:</string>
+    <string name="lName">Last Name:</string>
+    <string name="mainPage">Return to Main Page</string>
+    <string name="loginError">Incorrect Username or Password</string>
+    <string name="loginSuccess">Welcome!</string>
+    <string name="signUpSuccess">You Have Sucessfully Signed Up!</string>
+    <string name="signUpFailure">Please Fill All Fields!</string>
+</resources>
