@@ -2,6 +2,7 @@ package com.example.stazgrady_comp304sec002_lab4_group7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,10 +33,9 @@ public class LibrarianLoginActivity extends AppCompatActivity {
 
     //placeholder authentication method, not connected to the db
     public void auth (String username, String password) {
-        //still need the activities for the librarian module
         if (username.equals("valid") && password.equals("valid")) {
-            //Intent intent = new Intent(StudentLoginActivity.this, BookListActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(LibrarianLoginActivity.this, LibrarianActivity.class);
+            startActivity(intent);
             Toast.makeText(LibrarianLoginActivity.this, R.string.loginSuccess, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(LibrarianLoginActivity.this, R.string.loginError, Toast.LENGTH_SHORT).show();

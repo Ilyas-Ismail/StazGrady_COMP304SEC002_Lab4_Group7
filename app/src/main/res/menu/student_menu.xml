@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/studentMenuItem1"
+        android:title="@string/category1" />
+    <item
+        android:id="@+id/studentMenuItem2"
+        android:title="@string/category2" />
+    <item
+        android:id="@+id/studentMenuItem3"
+        android:title="@string/category3" />
+    <item
+        android:id="@+id/studentMenuItem4"
+        android:title="@string/category4" />
+    <item
+        android:id="@+id/studentProfile"
+        android:title="@string/profile" />
+
+</menu>
