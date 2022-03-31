@@ -12,15 +12,19 @@ import java.util.List;
 @Dao
 public interface BooksDao {
 
+    //method to insert an object into the database
     @Insert
     void insert(Books books);
 
+    //method to update an object from the database
     @Update
     void update(Books books);
 
+    //method to delete an object from the database
     @Delete
     void delete(Books books);
 
-    @Query("SELECT * FROM books_table ORDER BY bookId")
+    //method to retrieve all objects from the database
+    @Query("SELECT * FROM books_table order by bookId")
     LiveData<List<Books>> getAllBooks();
 }

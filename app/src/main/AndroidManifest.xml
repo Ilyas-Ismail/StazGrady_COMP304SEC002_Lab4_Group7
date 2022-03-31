@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StazGrady_COMP304Sec002_Lab4_Group7">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BorrowBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LibrarianActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity

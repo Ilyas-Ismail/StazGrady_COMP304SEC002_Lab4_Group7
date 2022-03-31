@@ -1,6 +1,7 @@
 package com.example.stazgrady_comp304sec002_lab4_group7;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,6 +58,9 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(SignUpActivity.this, R.string.signUpFailure, Toast.LENGTH_SHORT).show();
         } else {
             //add user details to roomDB
+            Student student = new Student(Integer.parseInt(username), firstName, lastName, password);
+            StudentViewModel studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
+            studentViewModel.insert(student);
 
             Toast.makeText(SignUpActivity.this, R.string.signUpSuccess, Toast.LENGTH_SHORT).show();
             initMainActivity();

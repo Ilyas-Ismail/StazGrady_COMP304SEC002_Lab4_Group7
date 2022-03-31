@@ -10,6 +10,27 @@
     <string name="mainPage">Return to Main Page</string>
     <string name="loginError">Incorrect Username or Password</string>
     <string name="loginSuccess">Welcome!</string>
-    <string name="signUpSuccess">You Have Sucessfully Signed Up!</string>
+    <string name="signUpSuccess">You Have Successfully Signed Up!</string>
     <string name="signUpFailure">Please Fill All Fields!</string>
+    <string name="title_activity_book_list">BookListActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="category1">Fiction</string>
+    <string name="category2">Non-Fiction</string>
+    <string name="category3">Educational</string>
+    <string name="category4">History</string>
+    <string name="profile">Profile</string>
+    <string name="add_book">+</string>
+    <string name="book_name_edit">Book Name</string>
+    <string name="author_name_edit">Author\'s Name</string>
+    <string name="description_edit">Description</string>
+    <string name="category_edit">Category</string>
+    <string name="quantity_edit">Quantity</string>
+    <string name="save_book">Save</string>
 </resources>

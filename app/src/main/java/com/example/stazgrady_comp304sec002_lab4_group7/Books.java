@@ -14,6 +14,7 @@ public class Books {
     private String category;
     private int quantity;
 
+    //getters and setters for each variable
     public int getBookId() {
         return bookId;
     }
@@ -62,6 +63,7 @@ public class Books {
         this.quantity = quantity;
     }
 
+    //constructor for Books object
     public Books(String bookName, String authorName, String bookDescription, String category, int quantity) {
         this.bookName = bookName;
         this.authorName = authorName;
