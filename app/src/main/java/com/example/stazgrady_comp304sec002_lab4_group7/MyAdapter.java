@@ -21,7 +21,6 @@ import java.util.Set;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-<<<<<<< HEAD
     private ArrayList<Books> bookList = new ArrayList<>();
     private onItemClickListener listener;
 
@@ -52,31 +51,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         notifyDataSetChanged();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-=======
-    ArrayList<Books> bookList;
-    Context context;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        ArrayList<Books> bookList;
+        Context context;
 
-    public MyAdapter(ArrayList<Books> data) {
-        this.bookList = (ArrayList<Books>) data;
-    }
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
         private final TextView name;
         private final TextView author;
         private final TextView description;
         private final TextView category;
         private final TextView quantity;
 
-        public MyViewHolder(View v){
+        public MyViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.name);
             author = v.findViewById(R.id.author);
             description = v.findViewById(R.id.description);
             category = v.findViewById(R.id.category);
             quantity = v.findViewById(R.id.quantity);
-<<<<<<< HEAD
 
             //unfinished onClickListener for when the user wants to edit a book
             v.setOnClickListener(new View.OnClickListener() {
@@ -99,29 +90,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public void setOnItemClickListener(onItemClickListener listener) {
         this.listener = listener;
-=======
-        }
-    }
-
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        context = parent.getContext();
-        View v = LayoutInflater.from(context).inflate(R.layout.booklist_row, parent, false);
-        return new MyViewHolder(v);
-    }
-
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position){
-        holder.name.setText(bookList.get(position).getBookName());
-        holder.author.setText(bookList.get(position).getAuthorName());
-        holder.description.setText(bookList.get(position).getBookDescription());
-        holder.category.setText(bookList.get(position).getCategory());
-        holder.quantity.setText(bookList.get(position).getQuantity());
-    }
-
-    public int getItemCount(){
-        return bookList.size();
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
     }
 }
+

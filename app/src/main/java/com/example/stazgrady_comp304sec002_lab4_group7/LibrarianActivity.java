@@ -1,10 +1,7 @@
 package com.example.stazgrady_comp304sec002_lab4_group7;
 
 import androidx.annotation.Nullable;
-<<<<<<< HEAD
 import androidx.annotation.RequiresApi;
-=======
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -13,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Person;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,13 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-=======
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.widget.Button;
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +32,6 @@ public class LibrarianActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_librarian);
 
-<<<<<<< HEAD
         bookList = new ArrayList<>();
         BooksViewModel booksViewModel = new ViewModelProvider(this).get(BooksViewModel.class);
 
@@ -51,24 +40,14 @@ public class LibrarianActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         MyAdapter adapter = new MyAdapter();
         recyclerView.setAdapter(adapter);
-=======
-        bookList = new ArrayList<> ();
-
-        BooksViewModel booksViewModel = new ViewModelProvider(this).get(BooksViewModel.class);
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
 
         booksViewModel.getAllBooks().observe(this, new Observer<List<Books>>(){
             @Override
             public void onChanged(@Nullable List<Books> result){
                 bookList.addAll(result);
-<<<<<<< HEAD
                 adapter.setBookList(bookList);
-=======
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
             }
         });
-
-        displayBookList("all");
 
         Button addBook = findViewById(R.id.add_book);
 
@@ -79,7 +58,6 @@ public class LibrarianActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-<<<<<<< HEAD
 
 
     }
@@ -125,25 +103,6 @@ public class LibrarianActivity extends AppCompatActivity {
                 });
                 break;
         }
-
-
-=======
-    }
-
-    private void displayBookList(String category) {
-        RecyclerView recyclerView = findViewById(R.id.book_list_lib);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
-        switch(category){
-            default:
-                break;
-        }
-
-        MyAdapter adapter = new MyAdapter(bookList);
-        recyclerView.setAdapter(adapter);
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -151,7 +110,6 @@ public class LibrarianActivity extends AppCompatActivity {
         inflater.inflate(R.menu.librarian_menu, menu);
         return true;
     }
-<<<<<<< HEAD
 
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(LibrarianActivity.this, LibrarianActivity.class);
@@ -167,6 +125,4 @@ public class LibrarianActivity extends AppCompatActivity {
         }
         return true;
     }
-=======
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
 }

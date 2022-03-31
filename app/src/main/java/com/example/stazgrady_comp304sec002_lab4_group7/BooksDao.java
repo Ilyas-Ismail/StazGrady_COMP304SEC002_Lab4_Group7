@@ -24,10 +24,7 @@ public interface BooksDao {
     @Delete
     void delete(Books books);
 
-<<<<<<< HEAD
     //method to retrieve all objects from the database
-=======
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
     @Query("SELECT * FROM books_table order by bookId")
     LiveData<List<Books>> getAllBooks();
 }

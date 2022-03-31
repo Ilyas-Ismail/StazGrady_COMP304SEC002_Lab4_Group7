@@ -50,7 +50,6 @@ public class ProfileActivity extends AppCompatActivity {
         TextView firstName = findViewById(R.id.firstName_profile);
         TextView lastName = findViewById(R.id.lastName_profile);
 
-<<<<<<< HEAD
         if (student.getFirstName() == null) {
             studentID.setText("null");
             firstName.setText("null");
@@ -60,11 +59,10 @@ public class ProfileActivity extends AppCompatActivity {
             firstName.setText(student.getFirstName());
             lastName.setText(student.getLastName());
         }
-=======
+
         studentID.setText(student.getStudentId());
         firstName.setText(student.getFirstName());
         lastName.setText(student.getLastName());
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
     }
 
     private void displayBookInfo() {

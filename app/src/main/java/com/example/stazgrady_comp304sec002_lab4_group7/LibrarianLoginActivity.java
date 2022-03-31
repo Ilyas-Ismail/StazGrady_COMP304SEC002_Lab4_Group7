@@ -7,10 +7,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
-<<<<<<< HEAD
 import android.os.Build;
-=======
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,16 +54,11 @@ public class LibrarianLoginActivity extends AppCompatActivity {
     //placeholder authentication method, not connected to the db
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void auth (String username, String password) {
-<<<<<<< HEAD
 
         Librarian librarian = librarianList.stream().filter(s -> s.getLibrarianId() == Integer.parseInt(username) && s.getPassword().equals(password)).findFirst().orElse(null);
         if (librarian != null) {
             Intent intent = new Intent(LibrarianLoginActivity.this, LibrarianActivity.class);
             intent.putExtra("librarianID", librarian.getLibrarianId());
-=======
-        if (username.equals("valid") && password.equals("valid")) {
-            Intent intent = new Intent(LibrarianLoginActivity.this, LibrarianActivity.class);
->>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
             startActivity(intent);
             Toast.makeText(LibrarianLoginActivity.this, R.string.loginSuccess, Toast.LENGTH_SHORT).show();
         } else {
