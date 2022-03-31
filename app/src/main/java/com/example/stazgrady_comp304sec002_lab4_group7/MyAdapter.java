@@ -21,6 +21,39 @@ import java.util.Set;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
+<<<<<<< HEAD
+    private ArrayList<Books> bookList = new ArrayList<>();
+    private onItemClickListener listener;
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.booklist_row, parent, false);
+        return new MyViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Books currentBook = bookList.get(position);
+        holder.name.setText(currentBook.getBookName());
+        holder.author.setText(currentBook.getAuthorName());
+        holder.description.setText(currentBook.getBookDescription());
+        holder.category.setText(currentBook.getCategory());
+        holder.quantity.setText(String.valueOf(currentBook.getQuantity()));
+    }
+
+    @Override
+    public int getItemCount() {
+        return bookList.size();
+    }
+
+    public void setBookList(ArrayList<Books> bookList) {
+        this.bookList = bookList;
+        notifyDataSetChanged();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+=======
     ArrayList<Books> bookList;
     Context context;
 
@@ -29,6 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
         private final TextView name;
         private final TextView author;
         private final TextView description;
@@ -42,6 +76,30 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             description = v.findViewById(R.id.description);
             category = v.findViewById(R.id.category);
             quantity = v.findViewById(R.id.quantity);
+<<<<<<< HEAD
+
+            //unfinished onClickListener for when the user wants to edit a book
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    //to avoid crashing if there is no item
+                    if (listener != null && pos != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(bookList.get(pos));
+                    }
+                }
+            });
+        }
+    }
+
+    //set-up for the on-click listener to be used on the books
+    public interface onItemClickListener {
+        void onItemClick(Books book);
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener) {
+        this.listener = listener;
+=======
         }
     }
 
@@ -64,5 +122,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public int getItemCount(){
         return bookList.size();
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
     }
 }

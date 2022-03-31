@@ -47,14 +47,22 @@ public class StudentActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.book_list_stu);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+<<<<<<< HEAD
+        MyAdapter adapter = new MyAdapter();
+        recyclerView.setAdapter(adapter);
+=======
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
 
         switch(category){
             default:
                 break;
         }
+<<<<<<< HEAD
+=======
 
         MyAdapter adapter = new MyAdapter(bookList);
         recyclerView.setAdapter(adapter);
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,6 +78,13 @@ public class StudentActivity extends AppCompatActivity {
                 intent.putExtra("studentID", studentID);
                 startActivity(intent);
                 break;
+<<<<<<< HEAD
+            case R.id.studentMenuItem4:
+                Intent intent1 = new Intent(StudentActivity.this, StudentActivity.class);
+                startActivity(intent1);
+                displayBookList("history");
+=======
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
             default:
                 displayBookList("all");
         }

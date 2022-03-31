@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<androidx.cardview.widget.CardView
+=======
 <RelativeLayout
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+<<<<<<< HEAD
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!--TextView to display the name-->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <!--TextView to display the author-->
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <!--TextView to display the description-->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/author"
+            android:layout_marginTop="7dp"
+            android:textColor="#343434"
+            android:textSize="14sp" />
+
+        <!--TextView to display the category-->
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description"
+            android:textColor="#343434"
+            android:textSize="14sp" />
+
+        <!--TextView to display the quantity-->
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:inputType="number"
+            android:textColor="#343434"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+=======
     android:padding="5dip">
 
     <!--TextView to display the name-->
@@ -55,3 +118,4 @@
         android:textColor="#343434"
         android:textSize="14sp" />
 </RelativeLayout>
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be

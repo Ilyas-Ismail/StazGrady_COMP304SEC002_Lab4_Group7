@@ -30,8 +30,18 @@ public class EditBookActivity extends AppCompatActivity {
                 EditText category = findViewById(R.id.category_edit);
                 EditText quantity = findViewById(R.id.quantity_edit);
 
+<<<<<<< HEAD
+                Books newBook = new Books(
+                        name.getText().toString(),
+                        author.getText().toString(),
+                        description.getText().toString(),
+                        category.getText().toString(),
+                        Integer.parseInt(quantity.getText().toString())
+                );
+=======
                 Books newBook = new Books(name.getText().toString(), author.getText().toString(), description.getText().toString(),
                         category.getText().toString(), Integer.parseInt(quantity.getText().toString()));
+>>>>>>> 12125c334d4f076657d67bfc9e1f21639404f4be
                 booksViewModel.insert(newBook);
 
                 Intent intent = new Intent(EditBookActivity.this, LibrarianActivity.class);
