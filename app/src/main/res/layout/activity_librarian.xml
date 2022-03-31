@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -7,18 +7,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/book_list_lib"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:dividerHeight="1dp" />
 
     <Button
         android:id="@+id/add_book"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="32dp"
+        android:layout_gravity="end"
+        android:layout_margin="5dp"
         android:background="@drawable/buttonshape"
         android:text="@string/add_book"
         android:textSize="20sp"
         />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
