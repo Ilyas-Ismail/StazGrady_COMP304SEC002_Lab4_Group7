@@ -1,25 +1,17 @@
 package com.example.stazgrady_comp304sec002_lab4_group7;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.stazgrady_comp304sec002_lab4_group7.R;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder> {
 
     private ArrayList<Books> bookList = new ArrayList<>();
     private onItemClickListener listener;
@@ -52,7 +44,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ArrayList<Books> bookList;
         Context context;
 
         private final TextView name;
@@ -69,7 +60,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             category = v.findViewById(R.id.category);
             quantity = v.findViewById(R.id.quantity);
 
-            //unfinished onClickListener for when the user wants to edit a book
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -88,8 +78,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         void onItemClick(Books book);
     }
 
-    public void setOnItemClickListener(onItemClickListener listener) {
-        this.listener = listener;
-    }
+    public void setOnItemClickListener(onItemClickListener listener) { this.listener = listener; }
 }
 

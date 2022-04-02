@@ -33,4 +33,6 @@
     <string name="category_edit">Category</string>
     <string name="quantity_edit">Quantity</string>
     <string name="save_book">Save</string>
+    <string name="remove_book">Remove</string>
+    <string name="borrow_book">Borrow Book</string>
 </resources>

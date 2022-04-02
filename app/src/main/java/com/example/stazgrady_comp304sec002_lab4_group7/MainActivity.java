@@ -1,6 +1,7 @@
 package com.example.stazgrady_comp304sec002_lab4_group7;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 initStudentSignUpActivity();
             }
         });
+
     }
 
     public void initLibrarianLoginActivity() {

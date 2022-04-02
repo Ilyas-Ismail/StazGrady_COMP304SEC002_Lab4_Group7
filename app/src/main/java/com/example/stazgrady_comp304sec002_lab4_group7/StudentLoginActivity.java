@@ -1,5 +1,7 @@
 package com.example.stazgrady_comp304sec002_lab4_group7;
 
+import static java.lang.Integer.*;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,11 +55,10 @@ public class StudentLoginActivity extends AppCompatActivity {
         });
     }
 
-    //placeholder authentication method, not connected to the db
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void auth (String username, String password) {
+    public void auth(String username, String password) {
 
-        Student student = studentList.stream().filter(s -> s.getStudentId() == Integer.parseInt(username) && s.getPassword().equals(password)).findFirst().orElse(null);
+        Student student = studentList.stream().filter(s -> s.getStudentId() == parseInt(username) && s.getPassword().equals(password)).findFirst().orElse(null);
         if (student != null) {
             Intent intent = new Intent(StudentLoginActivity.this, StudentActivity.class);
             intent.putExtra("studentID", student.getStudentId());
@@ -66,5 +67,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         } else {
             Toast.makeText(StudentLoginActivity.this, R.string.loginError, Toast.LENGTH_SHORT).show();
         }
+
+
     }
 }

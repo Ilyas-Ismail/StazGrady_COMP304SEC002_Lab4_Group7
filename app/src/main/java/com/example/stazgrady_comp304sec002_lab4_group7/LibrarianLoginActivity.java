@@ -51,7 +51,6 @@ public class LibrarianLoginActivity extends AppCompatActivity {
         });
     }
 
-    //placeholder authentication method, not connected to the db
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void auth (String username, String password) {
 

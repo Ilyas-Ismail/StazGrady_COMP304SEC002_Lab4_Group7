@@ -1,19 +1,17 @@
 package com.example.stazgrady_comp304sec002_lab4_group7;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -32,50 +30,56 @@ public class ProfileActivity extends AppCompatActivity {
         studentList = new ArrayList<>();
         bookList = new ArrayList<>();
 
-        displayStudentInfo();
-        displayBookInfo();
+        StudentViewModel studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
 
+        studentViewModel.getAllStudents().observe(this, result -> {
+            studentList.addAll(result);
+            displayStudentInfo();
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void displayStudentInfo() {
-        StudentViewModel studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
 
-        LiveData<List<Student>> studentLiveData = studentViewModel.getAllStudents();
-        studentList = studentLiveData.getValue();
+        TextView studentID_txt = findViewById(R.id.studentID_profile);
+        TextView firstName_txt = findViewById(R.id.firstName_profile);
+        TextView lastName_txt = findViewById(R.id.lastName_profile);
 
         Student student = studentList.stream().filter(s -> s.getStudentId() == studentID).findFirst().orElse(null);
 
-        TextView studentID = findViewById(R.id.studentID_profile);
-        TextView firstName = findViewById(R.id.firstName_profile);
-        TextView lastName = findViewById(R.id.lastName_profile);
+        assert student != null;
+        studentID_txt.setText(String.format(Locale.CANADA,"%d", student.getStudentId()));
+        firstName_txt.setText(student.getFirstName());
+        lastName_txt.setText(student.getLastName());
 
-        if (student.getFirstName() == null) {
-            studentID.setText("null");
-            firstName.setText("null");
-            lastName.setText("null");
-        } else {
-            studentID.setText(student.getStudentId());
-            firstName.setText(student.getFirstName());
-            lastName.setText(student.getLastName());
-        }
-
-        studentID.setText(student.getStudentId());
-        firstName.setText(student.getFirstName());
-        lastName.setText(student.getLastName());
-    }
-
-    private void displayBookInfo() {
         BooksViewModel booksViewModel = new ViewModelProvider(this).get(BooksViewModel.class);
 
-        booksViewModel.getAllBooks().observe(this, new Observer<List<Books>>() {
-            @Override
-            public void onChanged(@Nullable List<Books> result) {
-                bookList.addAll(result);
-            }
+        booksViewModel.getAllBooks().observe(this, result -> {
+            assert result != null;
+            bookList.addAll(result);
+            displayBookInfo(student.getBookId());
         });
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void displayBookInfo(int bookID) {
+        TextView bookName = findViewById(R.id.bookName_profile);
+        TextView author = findViewById(R.id.bookAuthor_profile);
+        TextView description = findViewById(R.id.bookDescription_profile);
+        TextView category = findViewById(R.id.bookCategory_profile);
+
+        if(bookID != 0){
+            Books book = bookList.stream().filter(b -> b.getBookId() == bookID).findFirst().orElse(null);
+
+            assert book != null;
+            bookName.setText(book.getBookName());
+            author.setText(book.getAuthorName());
+            description.setText(book.getBookDescription());
+            category.setText(book.getCategory());
+        }
+
+    }
 
 
 }
